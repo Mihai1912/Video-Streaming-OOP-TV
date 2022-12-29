@@ -1,7 +1,13 @@
 Starting audit...
+[ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\actionhandler\ActionHandler.java:21:9: '}' at column 9 should be on the same line as the next part of a multi-block statement (one that directly contains multiple blocks: if/else-if/else, do/while or try/catch/finally). [RightCurly]
+[ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\actionhandler\ActionHandler.java:24:9: '}' at column 9 should be on the same line as the next part of a multi-block statement (one that directly contains multiple blocks: if/else-if/else, do/while or try/catch/finally). [RightCurly]
+[ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\actionhandler\ActionHandler.java:27:9: '}' at column 9 should be on the same line as the next part of a multi-block statement (one that directly contains multiple blocks: if/else-if/else, do/while or try/catch/finally). [RightCurly]
+[ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\actionhandler\ActionHandler.java:28:50: '{' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\fileinput\Action.java:7:8: Unused import - java.util.ArrayList. [UnusedImports]
 [ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\fileinput\Movie.java:41:5: Class 'Movie' looks like designed for extension (can be subclassed), but the method 'toString' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'Movie' final or making the method 'toString' static/final/abstract/empty, or adding allowed annotation for the method. [DesignForExtension]
-[ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\fileinput\User.java:56:33: '15' is a magic number. [MagicNumber]
+[ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\fileinput\User.java:60:33: '15' is a magic number. [MagicNumber]
 [ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\Main.java:13:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
+[ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\Main.java:22:65: ',' is preceded with whitespace. [NoWhitespaceBefore]
 [ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\pages\LoginPage.java:34:46: '15' is a magic number. [MagicNumber]
 [ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\pages\SeeDetailsPage.java:201:36: '5' is a magic number. [MagicNumber]
 [ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\pages\UpgradesPage.java:26:32: '10' is a magic number. [MagicNumber]
@@ -12,4 +18,4 @@ Starting audit...
 [ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\Test.java:206:65: Parameter testFileName should be final. [FinalParameters]
 [ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\Test.java:222: Line is longer than 100 characters (found 108). [LineLength]
 Audit done.
-Checkstyle ends with 12 errors.
+Checkstyle ends with 18 errors.

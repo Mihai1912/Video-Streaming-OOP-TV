@@ -18,6 +18,7 @@ public final class User {
     private ArrayList<Movie> likedMovies;
     private ArrayList<Movie> ratedMovies;
     private ArrayList<Movie> moviesToWatch;
+    private ArrayList<String> notifications;
 
     public User() {
     }
@@ -25,7 +26,8 @@ public final class User {
     public User(final Credentials credentials, final Integer tokensCount,
                 final Integer numFreePremiumMovies, final ArrayList<Movie> purchasedMovies,
                 final ArrayList<Movie> watchedMovies, final ArrayList<Movie> likedMovies,
-                final ArrayList<Movie> ratedMovies, final ArrayList<Movie> moviesToWatch) {
+                final ArrayList<Movie> ratedMovies, final ArrayList<Movie> moviesToWatch,
+                final ArrayList<String> notifications) {
         this.credentials = credentials;
         this.tokensCount = tokensCount;
         this.numFreePremiumMovies = numFreePremiumMovies;
@@ -34,6 +36,7 @@ public final class User {
         this.likedMovies = likedMovies;
         this.ratedMovies = ratedMovies;
         this.moviesToWatch = moviesToWatch;
+        this.notifications = notifications;
     }
 
     public User(final User user) {
@@ -48,6 +51,7 @@ public final class User {
         setLikedMovies(deepCopyForArray(user.getLikedMovies()));
         setRatedMovies(deepCopyForArray(user.getRatedMovies()));
         setMoviesToWatch(deepCopyForArray(user.getMoviesToWatch()));
+        setNotifications(user.getNotifications());
     }
 
     public User(final Credentials credentials) {
@@ -59,6 +63,7 @@ public final class User {
         setLikedMovies(new ArrayList<Movie>());
         setRatedMovies(new ArrayList<Movie>());
         setMoviesToWatch(new ArrayList<Movie>());
+        setNotifications(new ArrayList<String>());
     }
 
     /**

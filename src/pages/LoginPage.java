@@ -35,6 +35,7 @@ public final class LoginPage extends Page {
                 helper.setCurrentUser(user);
                 helper.setCurrentMovieList(new ArrayList<>());
                 user.setMoviesToWatch(moviesAvailable(input, helper));
+                user.setNotifications(new ArrayList<String>());
                 return true;
             }
         }

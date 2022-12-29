@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+
 @Setter
 @Getter
 public final class Action {
@@ -26,6 +28,12 @@ public final class Action {
     private String objectType;
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private Integer rate;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private String subscribedGenre;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private Movie addedMovie;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private String deletedMovie;
 
     public Action() {
     }

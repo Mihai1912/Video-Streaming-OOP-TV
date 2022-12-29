@@ -19,8 +19,8 @@ public class Main {
     public static void main(final String[] args) throws IOException {
         String pathToInputFile = args[0];
         String resutlFile = args[1];
-        System.out.println("========" + pathToInputFile);
-        System.out.println("========" + resutlFile);
+        String viewOutputPath = pathToInputFile.replaceAll("in" , "results");
+
 
         ObjectMapper objectMapper = new ObjectMapper();
         Input input = objectMapper.readValue(new File(pathToInputFile), Input.class);
@@ -41,5 +41,6 @@ public class Main {
 
         ObjectWriter objectWriter = objectMapper.writerWithDefaultPrettyPrinter();
         objectWriter.writeValue(new File(resutlFile), output);
+        objectWriter.writeValue(new File(viewOutputPath), output);
     }
 }

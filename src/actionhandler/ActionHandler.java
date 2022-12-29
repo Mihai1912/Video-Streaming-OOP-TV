@@ -16,8 +16,17 @@ public final class ActionHandler {
     public void getType(final Input input, final Action action, final Helper helper) {
         if ("change page".equals(action.getType())) {
             ChangePage.getInstance().changePage(input, action, helper);
-        } else {
+        } else if ("on page".equals(action.getType())) {
             OnPage.getInstance().onPage(input, action, helper);
+        }
+        else if ("subscribe".equals(action.getType())) {
+            return;
+        }
+        else if ("database".equals(action.getType())) {
+            return;
+        }
+        else if ("back".equals(action.getType())){
+            return;
         }
     }
 
