@@ -1,0 +1,15 @@
+Starting audit...
+[ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\fileinput\Movie.java:41:5: Class 'Movie' looks like designed for extension (can be subclassed), but the method 'toString' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'Movie' final or making the method 'toString' static/final/abstract/empty, or adding allowed annotation for the method. [DesignForExtension]
+[ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\fileinput\User.java:56:33: '15' is a magic number. [MagicNumber]
+[ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\Main.java:13:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
+[ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\pages\LoginPage.java:34:46: '15' is a magic number. [MagicNumber]
+[ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\pages\SeeDetailsPage.java:201:36: '5' is a magic number. [MagicNumber]
+[ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\pages\UpgradesPage.java:26:32: '10' is a magic number. [MagicNumber]
+[ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\pages\UpgradesPage.java:28:70: '10' is a magic number. [MagicNumber]
+[ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\Test.java:1: File does not end with a newline. [NewlineAtEndOfFile]
+[ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\Test.java:9:28: Using the '.*' form of import should be avoided - java.util.concurrent.*. [AvoidStarImport]
+[ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\Test.java:158: Line is longer than 100 characters (found 108). [LineLength]
+[ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\Test.java:206:65: Parameter testFileName should be final. [FinalParameters]
+[ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\Test.java:222: Line is longer than 100 characters (found 108). [LineLength]
+Audit done.
+Checkstyle ends with 12 errors.
