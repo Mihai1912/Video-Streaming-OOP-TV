@@ -69,7 +69,7 @@
         "name": "Ramsi",
         "password": "numiplacevelea",
         "accountType": "standard",
-        "country": "Ireland",
+        "country": "Russia",
         "balance": "300"
       }
     },
@@ -79,51 +79,30 @@
     },
     {
       "type": "on page",
-      "feature": "search",
-      "startsWith": "Iubire din serai"
-    },
-    {
-      "type": "on page",
-      "feature": "subscribe",
-      "subscribedGenre": "Action"
-    },
-    {
-      "type": "database",
-      "feature": "add",
-      "addedMovie": {
-        "name": "Matrix 2",
-        "year": "1998",
-        "duration": 131,
-        "genres": [
-          "Action",
-          "Comedy",
-          "Crime"
-        ],
-        "actors": [
-          "Laurence Fishburne",
-          "Halle Berry",
-          "Keanu Reeves"
-        ],
-        "countriesBanned": [
-          "Ukraine"
-        ]
+      "feature": "filter",
+      "filters": {
+        "sort": {
+          "rating": "decreasing",
+          "duration": "decreasing"
+        }
       }
     },
     {
       "type": "change page",
-      "page": "logout"
-    },
-    {
-      "type": "change page",
-      "page": "login"
+      "page": "see details",
+      "movie": "Titanic"
     },
     {
       "type": "on page",
-      "feature": "login",
-      "credentials": {
-        "name": "Eduard",
-        "password": "secret"
-      }
+      "feature": "purchase"
+    },
+    {
+      "type": "on page",
+      "feature": "watch"
+    },
+    {
+      "type": "on page",
+      "feature": "like"
     }
   ]
 }

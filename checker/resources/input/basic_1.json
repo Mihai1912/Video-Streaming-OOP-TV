@@ -60,6 +60,18 @@
   "actions": [
     {
       "type": "change page",
+      "page": "login"
+    },
+    {
+      "type": "on page",
+      "feature": "login",
+      "credentials": {
+        "name": "Eduard",
+        "password": "parolamea"
+      }
+    },
+    {
+      "type": "change page",
       "page": "register"
     },
     {
@@ -75,38 +87,14 @@
     },
     {
       "type": "change page",
-      "page": "movies"
+      "page": "login"
     },
     {
       "type": "on page",
-      "feature": "search",
-      "startsWith": "Iubire din serai"
-    },
-    {
-      "type": "on page",
-      "feature": "subscribe",
-      "subscribedGenre": "Action"
-    },
-    {
-      "type": "database",
-      "feature": "add",
-      "addedMovie": {
-        "name": "Matrix 2",
-        "year": "1998",
-        "duration": 131,
-        "genres": [
-          "Action",
-          "Comedy",
-          "Crime"
-        ],
-        "actors": [
-          "Laurence Fishburne",
-          "Halle Berry",
-          "Keanu Reeves"
-        ],
-        "countriesBanned": [
-          "Ukraine"
-        ]
+      "feature": "login",
+      "credentials": {
+        "name": "Ramsi",
+        "password": "numiplacevelea"
       }
     },
     {
@@ -122,8 +110,23 @@
       "feature": "login",
       "credentials": {
         "name": "Eduard",
+        "password": "nicigand"
+      }
+    },
+    {
+      "type": "change page",
+      "page": "login"
+    },
+    {
+      "type": "on page",
+      "feature": "login",
+      "credentials": {
+        "name": "Eduard",
         "password": "secret"
       }
+    },
+    {
+      "type": "back"
     }
   ]
 }

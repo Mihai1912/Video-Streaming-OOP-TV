@@ -9,6 +9,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 @Getter
 @Setter
@@ -65,6 +66,7 @@ public final class SeeDetailsPage extends Page {
                 if (watchFeature(helper).isEmpty()) {
                     return false;
                 }
+                helper.setCurrentMovieList(new ArrayList<>());
                 helper.getCurrentMovieList().addAll(watchFeature(helper));
                 return true;
             }
@@ -79,6 +81,7 @@ public final class SeeDetailsPage extends Page {
                 if (rateFeature(action, helper).isEmpty()) {
                     return false;
                 }
+                helper.setCurrentMovieList(new ArrayList<>());
                 helper.getCurrentMovieList().addAll(rateFeature(action, helper));
                 return true;
             }
@@ -89,7 +92,6 @@ public final class SeeDetailsPage extends Page {
     }
 
     /**
-     *
      * @param helper the class in which the current user is stored, the list of current movies and
      *               several auxiliary fields
      * @return arraylist with the purchased movies
@@ -138,7 +140,6 @@ public final class SeeDetailsPage extends Page {
     }
 
     /**
-     *
      * @param helper the class in which the current user is stored, the list of current movies and
      *               several auxiliary fields
      * @return arraylist with the movies seen
@@ -150,6 +151,7 @@ public final class SeeDetailsPage extends Page {
         }
         if (helper.getCurrentUser().getPurchasedMovies().contains(helper.getSeeDetailsMovie())) {
             if (helper.getCurrentUser().getWatchedMovies().contains(helper.getSeeDetailsMovie())) {
+                watchedMovies.add(helper.getSeeDetailsMovie());
                 return watchedMovies;
             }
             helper.getCurrentUser().getWatchedMovies().add(helper.getSeeDetailsMovie());
@@ -160,7 +162,6 @@ public final class SeeDetailsPage extends Page {
     }
 
     /**
-     *
      * @param helper the class in which the current user is stored, the list of current movies and
      *               several auxiliary fields
      * @return arraylist with popular movies
@@ -177,13 +178,22 @@ public final class SeeDetailsPage extends Page {
             helper.getSeeDetailsMovie().setNumLikes(helper.getSeeDetailsMovie().getNumLikes() + 1);
             helper.getCurrentUser().getLikedMovies().add(helper.getSeeDetailsMovie());
             likeMovie.add(helper.getSeeDetailsMovie());
+
+            for (String genre : helper.getSeeDetailsMovie().getGenres()) {
+                if (helper.getCurrentUser().getLikeGenres().containsKey(genre)) {
+                    int val = helper.getCurrentUser().getLikeGenres().get(genre);
+                    helper.getCurrentUser().getLikeGenres().put(genre , val+1);
+                } else {
+                    helper.getCurrentUser().getLikeGenres().put(genre, 1);
+                }
+            }
+
             return likeMovie;
         }
         return likeMovie;
     }
 
     /**
-     *
      * @param action the action to be performed at this moment
      * @param helper the class in which the current user is stored, the list of current movies and
      *               several auxiliary fields
@@ -195,30 +205,38 @@ public final class SeeDetailsPage extends Page {
             return rateMovies;
         }
         if (helper.getCurrentUser().getWatchedMovies().contains(helper.getSeeDetailsMovie())) {
-            if (helper.getCurrentUser().getRatedMovies().contains(helper.getSeeDetailsMovie())) {
-                return rateMovies;
-            }
             if (action.getRate() > 5) {
                 return rateMovies;
             }
-            helper.getSeeDetailsMovie().getRatings().add(action.getRate());
-            helper.getSeeDetailsMovie().setNumRatings(helper.getSeeDetailsMovie()
-                    .getNumRatings() + 1);
-            int sumRate = 0;
-            for (Integer rate : helper.getSeeDetailsMovie().getRatings()) {
-                sumRate += rate;
+            if (helper.getCurrentUser().getRatedMovies().contains(helper.getSeeDetailsMovie())) {
+                String name = helper.getCurrentUser().getCredentials().getName();
+                helper.getSeeDetailsMovie().getRatings().remove(name);
+                helper.getSeeDetailsMovie().getRatings().put(name, (double) action.getRate());
+                helper.getSeeDetailsMovie().setRating(calcRating(helper));
+                rateMovies.add(helper.getSeeDetailsMovie());
             }
-            helper.getSeeDetailsMovie().setRating((double) sumRate
-                    / helper.getSeeDetailsMovie().getNumRatings());
-            helper.getCurrentUser().getRatedMovies().add(helper.getSeeDetailsMovie());
-            rateMovies.add(helper.getSeeDetailsMovie());
+            if (!helper.getCurrentUser().getRatedMovies().contains(helper.getSeeDetailsMovie())) {
+                String name = helper.getCurrentUser().getCredentials().getName();
+                helper.getSeeDetailsMovie().getRatings().put(name, (double) action.getRate());
+                helper.getSeeDetailsMovie()
+                        .setNumRatings(helper.getSeeDetailsMovie().getNumRatings() + 1);
+                helper.getSeeDetailsMovie().setRating(calcRating(helper));
+                helper.getCurrentUser().getRatedMovies().add(helper.getSeeDetailsMovie());
+                rateMovies.add(helper.getSeeDetailsMovie());
+            }
             return rateMovies;
         }
         return rateMovies;
     }
 
+    public double calcRating(Helper helper) {
+        double sum = 0.0;
+        for (Double i : helper.getSeeDetailsMovie().getRatings().values()) {
+            sum += i;
+        }
+        return sum / helper.getSeeDetailsMovie().getNumRatings();
+    }
     /**
-     *
      * @return page as a string
      */
     @Override

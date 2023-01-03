@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 @Getter
 @Setter
@@ -19,6 +20,8 @@ public final class Helper {
     private ArrayNode output;
     private ArrayList<Movie> filteredMovies = new ArrayList<>();
     private Integer seeDetailsAfterFilter = 0;
+    private Stack<String> PageStack = new Stack<String>();
+    private Boolean printOut = true;
 
     /**
      *  print errorStd
@@ -35,6 +38,12 @@ public final class Helper {
     public void printOutput() {
         output.addObject().putPOJO("error", null)
                 .putPOJO("currentMoviesList", deepCopyForArray(currentMovieList))
+                .putPOJO("currentUser", new User(currentUser));
+    }
+
+    public void printRecommendation() {
+        output.addObject().putPOJO("error", null)
+                .putPOJO("currentMoviesList", null)
                 .putPOJO("currentUser", new User(currentUser));
     }
 

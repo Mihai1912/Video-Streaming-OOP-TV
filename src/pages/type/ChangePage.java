@@ -47,6 +47,7 @@ public final class ChangePage {
             if (pageFactory.getPage(action.getPage()).actionTaken(input, action, helper)) {
                 helper.printOutput();
                 helper.setCurrentPage(action.getPage());
+                helper.getPageStack().push(action.getPage());
                 return;
             }
             helper.printError();
@@ -61,5 +62,6 @@ public final class ChangePage {
             return;
         }
         helper.setCurrentPage(action.getPage());
+        helper.getPageStack().push(action.getPage());
     }
 }

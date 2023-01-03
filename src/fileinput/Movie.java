@@ -5,13 +5,14 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 @Setter
 @Getter
 @JsonIgnoreProperties(value = {"ratings"})
 public class Movie {
     private String name;
-    private Integer year;
+    private String year;
     private int duration;
     private ArrayList<String> genres;
     private ArrayList<String> actors;
@@ -20,7 +21,8 @@ public class Movie {
     private Integer numLikes = 0;
     private Integer numRatings = 0;
     private Double rating = 0.0;
-    private ArrayList<Integer> ratings = new ArrayList<>();
+//    private ArrayList<Integer> ratings = new ArrayList<>();
+    private HashMap<String , Double> ratings = new HashMap<>();
 
     public Movie(final Movie movie) {
         name = movie.getName();

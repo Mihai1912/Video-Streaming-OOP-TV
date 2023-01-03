@@ -24,6 +24,7 @@ public final class LogoutPage extends Page {
         helper.setCurrentMovieList(new ArrayList<>());
         helper.setCurrentPage("homePageUnauthentify");
         helper.setSeeDetailsAfterFilter(0);
+        helper.getPageStack().removeAllElements();
         return false;
     }
 

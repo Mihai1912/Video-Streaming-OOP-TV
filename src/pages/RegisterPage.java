@@ -25,30 +25,8 @@ public final class RegisterPage extends Page {
         User user = new User(action.getCredentials());
         input.getUsers().add(user);
         helper.setCurrentUser(user);
-        user.setMoviesToWatch(moviesAvailable(input, helper));
+        user.setMoviesToWatch(user.moviesAvailable(input, helper));
         return true;
-    }
-
-    /**
-     *
-     * @param input dataBase from Json File
-     * @param helper the class in which the current user is stored, the list of current movies and
-     *               several auxiliary fields
-     * @return arraylist of movies available for the user depending on the country in which he is
-     *         located
-     */
-    public ArrayList<Movie> moviesAvailable(final Input input, final Helper helper) {
-        ArrayList<Movie> movies = new ArrayList<>();
-        ArrayList<Movie> aux = new ArrayList<>(input.getMovies());
-        for (Movie movie : aux) {
-            if (!movie.getCountriesBanned()
-                    .contains(helper.getCurrentUser().getCredentials().getCountry())) {
-                if (!movies.contains(movie)) {
-                    movies.add(movie);
-                }
-            }
-        }
-        return movies;
     }
 
     @Override

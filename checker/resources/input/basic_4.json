@@ -4,9 +4,9 @@
       "credentials": {
         "name": "Eduard",
         "password": "secret",
-        "accountType": "standard",
+        "accountType": "premium",
         "country": "Romania",
-        "balance": "200"
+        "balance": "50"
       }
     },
     {
@@ -14,7 +14,16 @@
         "name": "Mihail",
         "password": "discret",
         "accountType": "premium",
-        "country": "Russia",
+        "country": "Romania",
+        "balance": "1337"
+      }
+    },
+    {
+      "credentials": {
+        "name": "Florin",
+        "password": "TheWalkingDead",
+        "accountType": "premium",
+        "country": "Romania",
         "balance": "1337"
       }
     }
@@ -60,18 +69,6 @@
   "actions": [
     {
       "type": "change page",
-      "page": "login"
-    },
-    {
-      "type": "on page",
-      "feature": "login",
-      "credentials": {
-        "name": "Eduard",
-        "password": "parolamea"
-      }
-    },
-    {
-      "type": "change page",
       "page": "register"
     },
     {
@@ -81,30 +78,9 @@
         "name": "Ramsi",
         "password": "numiplacevelea",
         "accountType": "standard",
-        "country": "Ireland",
+        "country": "Romania",
         "balance": "300"
       }
-    },
-    {
-      "type": "change page",
-      "page": "login"
-    },
-    {
-      "type": "on page",
-      "feature": "login",
-      "credentials": {
-        "name": "Ramsi",
-        "password": "numiplacevelea"
-      }
-    },
-    {
-      "type": "change page",
-      "page": "movies"
-    },
-    {
-      "type": "on page",
-      "feature": "search",
-      "startsWith": "Iubire din serai"
     },
     {
       "type": "on page",
@@ -113,11 +89,6 @@
         "sort": {
           "rating": "decreasing",
           "duration": "decreasing"
-        },
-        "contains": {
-          "actors": [
-            "Keanu Reeves"
-          ]
         }
       }
     },
@@ -133,48 +104,13 @@
       "type": "on page",
       "feature": "login",
       "credentials": {
-        "name": "Eduard",
-        "password": "nicigand"
+        "name": "Mihail",
+        "password": "discret"
       }
-    },
-    {
-      "type": "change page",
-      "page": "login"
-    },
-    {
-      "type": "on page",
-      "feature": "login",
-      "credentials": {
-        "name": "Eduard",
-        "password": "secret"
-      }
-    },
-    {
-      "type": "change page",
-      "page": "upgrades"
-    },
-    {
-      "type": "on page",
-      "feature": "buy tokens",
-      "count": "50"
-    },
-    {
-      "type": "on page",
-      "feature": "buy premium account"
     },
     {
       "type": "change page",
       "page": "movies"
-    },
-    {
-      "type": "change page",
-      "page": "see details",
-      "movie": "AAA"
-    },
-    {
-      "type": "change page",
-      "page": "see details",
-      "movie": "BBBB"
     },
     {
       "type": "change page",
@@ -191,33 +127,44 @@
     },
     {
       "type": "on page",
-      "feature": "like"
+      "feature": "rate",
+      "rate": "3"
+    },
+    {
+      "type": "back"
+    },
+    {
+      "type": "change page",
+      "page": "see details",
+      "movie": "John Wick: Chapter 3 - Parabellum"
     },
     {
       "type": "on page",
-      "feature": "subscribe",
-      "subscribedGenre": "Action"
+      "feature": "purchase"
     },
     {
-      "type": "database",
-      "feature": "add",
-      "addedMovie": {
-        "name": "Matrix 2",
-        "year": "1998",
-        "duration": 131,
-        "genres": [
-          "Action",
-          "Comedy",
-          "Crime"
-        ],
-        "actors": [
-          "Laurence Fishburne",
-          "Halle Berry",
-          "Keanu Reeves"
-        ],
-        "countriesBanned": [
-          "Ukraine"
-        ]
+      "type": "on page",
+      "feature": "watch"
+    },
+    {
+      "type": "on page",
+      "feature": "rate",
+      "rate": "2"
+    },
+    {
+      "type": "change page",
+      "page": "logout"
+    },
+    {
+      "type": "change page",
+      "page": "login"
+    },
+    {
+      "type": "on page",
+      "feature": "login",
+      "credentials": {
+        "name": "Eduard",
+        "password": "secret"
       }
     },
     {
@@ -227,21 +174,11 @@
     {
       "type": "change page",
       "page": "see details",
-      "movie": "John Wick: Chapter 3 - Parabellum"
+      "movie": "Titanic"
     },
     {
       "type": "on page",
-      "feature": "subscribe",
-      "subscribedGenre": "Action"
-    },
-    {
-      "type": "on page",
-      "feature": "like"
-    },
-    {
-      "type": "on page",
-      "feature": "rate",
-      "rate": "5"
+      "feature": "purchase"
     },
     {
       "type": "on page",
@@ -249,12 +186,100 @@
     },
     {
       "type": "on page",
-      "feature": "like"
+      "feature": "rate",
+      "rate": "1"
+    },
+    {
+      "type": "back"
+    },
+    {
+      "type": "change page",
+      "page": "see details",
+      "movie": "John Wick: Chapter 3 - Parabellum"
+    },
+    {
+      "type": "on page",
+      "feature": "purchase"
+    },
+    {
+      "type": "on page",
+      "feature": "watch"
+    },
+    {
+      "type": "on page",
+      "feature": "rate",
+      "rate": "3"
+    },
+    {
+      "type": "change page",
+      "page": "logout"
+    },
+    {
+      "type": "change page",
+      "page": "login"
+    },
+    {
+      "type": "on page",
+      "feature": "login",
+      "credentials": {
+        "name": "Mihail",
+        "password": "discret"
+      }
+    },
+    {
+      "type": "change page",
+      "page": "movies"
+    },
+    {
+      "type": "change page",
+      "page": "see details",
+      "movie": "Titanic"
+    },
+    {
+      "type": "on page",
+      "feature": "purchase"
+    },
+    {
+      "type": "on page",
+      "feature": "watch"
     },
     {
       "type": "on page",
       "feature": "rate",
       "rate": "5"
+    },
+    {
+      "type":"back"
+    },
+    {
+      "type": "on page",
+      "feature": "filter",
+      "filters": {
+        "sort": {
+          "rating": "decreasing"
+        }
+      }
+    },
+    {
+      "type": "database",
+      "feature": "delete",
+      "deletedMovie": "Titanic"
+    },
+    {
+      "type": "change page",
+      "page": "logout"
+    },
+    {
+      "type": "change page",
+      "page": "login"
+    },
+    {
+      "type": "on page",
+      "feature": "login",
+      "credentials": {
+        "name": "Florin",
+        "password": "TheWalkingDead"
+      }
     }
   ]
 }

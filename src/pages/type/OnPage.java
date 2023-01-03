@@ -40,6 +40,7 @@ public final class OnPage {
                 if (pageFactory.getPage(helper.getCurrentPage())
                         .actionTaken(input, action, helper)) {
                     helper.setCurrentPage("homePageAuthentify");
+                    helper.getPageStack().push(helper.getCurrentPage());
                     helper.printOutput();
                     return;
                 }
@@ -52,7 +53,15 @@ public final class OnPage {
             if (action.getFeature().startsWith("buy")) {
                 return;
             }
+            if (!helper.getPrintOut()) {
+                helper.setPrintOut(true);
+                return;
+            }
             helper.printOutput();
+            return;
+        }
+        if (!helper.getPrintOut()) {
+            helper.setPrintOut(true);
             return;
         }
         helper.printError();

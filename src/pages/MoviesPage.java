@@ -21,7 +21,7 @@ public final class MoviesPage extends Page {
 
     @Override
     public boolean actionTaken(final Input input, final Action action, final Helper helper) {
-        if (action.getType().equals("change page")) {
+        if (action.getType().equals("change page") || action.getType().equals("back")) {
             helper.setCurrentMovieList(helper.getCurrentUser().getMoviesToWatch());
             return true;
         }

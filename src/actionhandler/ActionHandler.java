@@ -1,7 +1,6 @@
 package actionhandler;
 
-import pages.type.ChangePage;
-import pages.type.OnPage;
+import pages.type.*;
 import fileinput.Action;
 import fileinput.Input;
 import helper.Helper;
@@ -18,15 +17,10 @@ public final class ActionHandler {
             ChangePage.getInstance().changePage(input, action, helper);
         } else if ("on page".equals(action.getType())) {
             OnPage.getInstance().onPage(input, action, helper);
-        }
-        else if ("subscribe".equals(action.getType())) {
-            return;
-        }
-        else if ("database".equals(action.getType())) {
-            return;
-        }
-        else if ("back".equals(action.getType())){
-            return;
+        } else if ("database".equals(action.getType())) {
+            Database.getInstance().database(input, action, helper);
+        } else if ("back".equals(action.getType())){
+            Back.getInstance().back(input, action, helper);
         }
     }
 
