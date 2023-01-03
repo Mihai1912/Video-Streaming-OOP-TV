@@ -85,6 +85,13 @@ public final class SeeDetailsPage extends Page {
                 helper.getCurrentMovieList().addAll(rateFeature(action, helper));
                 return true;
             }
+            case "subscribe" -> {
+                if (subscribeFeature(helper , action)) {
+                    helper.setPrintOut(false);
+                    return true;
+                }
+                return false;
+            }
             default -> {
             }
         }
@@ -236,6 +243,20 @@ public final class SeeDetailsPage extends Page {
         }
         return sum / helper.getSeeDetailsMovie().getNumRatings();
     }
+
+    public boolean subscribeFeature (Helper helper , Action action) {
+        for (String genre : helper.getSeeDetailsMovie().getGenres()) {
+            if (genre.equals(action.getSubscribedGenre())) {
+                if (!helper.getCurrentUser().getSubscriptions().contains(genre)) {
+                    helper.getCurrentUser().getSubscriptions().add(genre);
+                    return true;
+                }
+                return false;
+            }
+        }
+        return false;
+    }
+
     /**
      * @return page as a string
      */
