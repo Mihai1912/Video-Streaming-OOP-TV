@@ -44,6 +44,7 @@ public class Database {
                             notification.setMovieName(action.getAddedMovie().getName());
                             notification.setMessage("ADD");
                             user.getNotifications().add(notification);
+                            return;
                         }
                     }
                 }
@@ -51,6 +52,82 @@ public class Database {
 
         } else {
 
+            boolean deletedMovieFound = false;
+
+            for (Movie movie : input.getMovies()) {
+                if (action.getDeletedMovie().equals(movie.getName())){
+                    input.getMovies().remove(movie);
+                    deletedMovieFound = true;
+                    break;
+                }
+            }
+            if (!deletedMovieFound) {
+                helper.printError();
+                return;
+            }
+
+            deletedMovieFound = false;
+
+            for (User user : helper.getUsers()) {
+                for (Movie movie : user.getMoviesToWatch()) {
+                    if (action.getDeletedMovie().equals(movie.getName())) {
+                        user.getMoviesToWatch().remove(movie);
+                        deletedMovieFound = true;
+                        break;
+                    }
+                }
+                if (!deletedMovieFound) {
+                    return;
+                }
+
+                deletedMovieFound = false;
+
+                for (Movie movie : user.getPurchasedMovies()) {
+                    if (action.getDeletedMovie().equals(movie.getName())) {
+                        user.getPurchasedMovies().remove(movie);
+                        deletedMovieFound = true;
+                        break;
+                    }
+                }
+                if (!deletedMovieFound) {
+                    return;
+                }
+
+                Notification notification = new Notification();
+                notification.setMovieName(action.getDeletedMovie());
+                notification.setMessage("DELETE");
+                user.getNotifications().add(notification);
+
+
+                for (Movie movie : user.getWatchedMovies()) {
+                    if (action.getDeletedMovie().equals(movie.getName())) {
+                        user.getWatchedMovies().remove(movie);
+                        break;
+                    }
+                }
+
+                for (Movie movie : user.getRatedMovies()) {
+                    if (action.getDeletedMovie().equals(movie.getName())) {
+                        user.getRatedMovies().remove(movie);
+                        break;
+                    }
+                }
+
+                for (Movie movie : user.getLikedMovies()) {
+                    if (action.getDeletedMovie().equals(movie.getName())) {
+                        user.getLikedMovies().remove(movie);
+                        break;
+                    }
+                }
+
+                if (user.getCredentials().getAccountType().equals("premium")) {
+                    user.setNumFreePremiumMovies(user.getNumFreePremiumMovies()+1);
+                }
+
+                if (user.getCredentials().getAccountType().equals("standard")) {
+                    user.setTokensCount(user.getTokensCount()+2);
+                }
+            }
         }
     }
 }

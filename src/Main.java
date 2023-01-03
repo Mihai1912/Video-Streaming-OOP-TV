@@ -52,11 +52,11 @@ public class Main {
             actionHandler.doAction(input, action, helper);
         }
 
-//        if (helper.getCurrentUser() != null
-//                && helper.getCurrentUser().getCredentials().getAccountType().equals("premium")) {
-//            Recommendation recommendation = new Recommendation();
-//            recommendation.giveRecommendation(helper , input.getMovies());
-//        }
+        if (helper.getCurrentUser() != null
+                && helper.getCurrentUser().getCredentials().getAccountType().equals("premium")) {
+            Recommendation recommendation = new Recommendation();
+            recommendation.giveRecommendation(helper , input.getMovies());
+        }
 
         ObjectWriter objectWriter = objectMapper.writerWithDefaultPrettyPrinter();
         objectWriter.writeValue(new File(resutlFile), output);

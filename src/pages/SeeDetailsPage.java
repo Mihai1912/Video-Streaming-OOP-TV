@@ -37,6 +37,7 @@ public final class SeeDetailsPage extends Page {
                         return true;
                     }
                 }
+                return false;
             } else {
                 if (helper.getFilteredMovies().isEmpty()) {
                     return false;
@@ -51,8 +52,8 @@ public final class SeeDetailsPage extends Page {
                         return true;
                     }
                 }
+                return false;
             }
-            return false;
         }
         switch (action.getFeature()) {
             case "purchase" -> {
