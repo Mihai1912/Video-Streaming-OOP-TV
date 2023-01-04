@@ -8,11 +8,10 @@ import helper.Helper;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Stack;
 
 @Getter
 @Setter
-public class Back {
+public final class Back {
     private static Back instance = null;
 
     private Back() {
@@ -28,7 +27,14 @@ public class Back {
         return instance;
     }
 
-    public void back(Input input, Action action, Helper helper) {
+    /**
+     * @param input  dataBase from Json File
+     * @param action the action to be performed at this moment
+     * @param helper the class in which the current user is stored, the list of current movies and
+     *               several auxiliary
+     *               fields
+     */
+    public void back(final Input input, final Action action, final Helper helper) {
 
         if (helper.getPageStack() == null || helper.getPageStack().isEmpty()) {
             helper.printError();
@@ -54,17 +60,15 @@ public class Back {
             return;
         }
 
-        if (pageFactory.getPage(crtPage).accept(changePageVisitor, previousPage)) {
-            helper.setCurrentPage(previousPage);
-        }
-
-
-        if (helper.getCurrentPage().equals("movies")) {
-            if (pageFactory.getPage(helper.getCurrentPage()).actionTaken(input, action, helper)) {
+        if (previousPage.equals("movies")) {
+            if (pageFactory.getPage(previousPage).actionTaken(input, action, helper)) {
+                helper.setCurrentPage(previousPage);
                 helper.printOutput();
                 return;
             }
             helper.printError();
         }
+
+        helper.setCurrentPage(previousPage);
     }
 }

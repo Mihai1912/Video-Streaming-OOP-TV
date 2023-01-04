@@ -19,7 +19,8 @@ public final class UpgradesPage extends Page {
             if (balance >= action.getCount()) {
                 helper.getCurrentUser().getCredentials()
                         .setBalance(String.valueOf(balance - action.getCount()));
-                helper.getCurrentUser().setTokensCount(action.getCount());
+                helper.getCurrentUser().setTokensCount(action.getCount()
+                        + helper.getCurrentUser().getTokensCount());
             }
         } else if (action.getFeature().equals("buy premium account")) {
             int tokensCount = helper.getCurrentUser().getTokensCount();

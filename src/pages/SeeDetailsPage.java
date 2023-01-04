@@ -9,7 +9,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.ArrayList;
-import java.util.Map;
 
 @Getter
 @Setter
@@ -87,7 +86,7 @@ public final class SeeDetailsPage extends Page {
                 return true;
             }
             case "subscribe" -> {
-                if (subscribeFeature(helper , action)) {
+                if (subscribeFeature(helper, action)) {
                     helper.setPrintOut(false);
                     return true;
                 }
@@ -190,7 +189,7 @@ public final class SeeDetailsPage extends Page {
             for (String genre : helper.getSeeDetailsMovie().getGenres()) {
                 if (helper.getCurrentUser().getLikeGenres().containsKey(genre)) {
                     int val = helper.getCurrentUser().getLikeGenres().get(genre);
-                    helper.getCurrentUser().getLikeGenres().put(genre , val+1);
+                    helper.getCurrentUser().getLikeGenres().put(genre, val + 1);
                 } else {
                     helper.getCurrentUser().getLikeGenres().put(genre, 1);
                 }
@@ -237,7 +236,13 @@ public final class SeeDetailsPage extends Page {
         return rateMovies;
     }
 
-    public double calcRating(Helper helper) {
+    /**
+     *
+     * @param helper the class in which the current user is stored, the list of current movies and
+     *               several auxiliary fields
+     * @return movie rating
+     */
+    public double calcRating(final Helper helper) {
         double sum = 0.0;
         for (Double i : helper.getSeeDetailsMovie().getRatings().values()) {
             sum += i;
@@ -245,7 +250,13 @@ public final class SeeDetailsPage extends Page {
         return sum / helper.getSeeDetailsMovie().getNumRatings();
     }
 
-    public boolean subscribeFeature (Helper helper , Action action) {
+    /**
+     * @param action the action to be performed at this moment
+     * @param helper the class in which the current user is stored, the list of current movies and
+     *               several auxiliary fields
+     * @return the truth value of the subscription functionality
+     */
+    public boolean subscribeFeature(final Helper helper, final Action action) {
         for (String genre : helper.getSeeDetailsMovie().getGenres()) {
             if (genre.equals(action.getSubscribedGenre())) {
                 if (!helper.getCurrentUser().getSubscriptions().contains(genre)) {

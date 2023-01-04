@@ -15,14 +15,13 @@ import java.util.ArrayList;
 
 public class Main {
     /**
-     *
      * @param args
      * @throws IOException
      */
     public static void main(final String[] args) throws IOException {
         String pathToInputFile = args[0];
         String resutlFile = args[1];
-        String viewOutputPath = pathToInputFile.replaceAll("in" , "results");
+        String viewOutputPath = pathToInputFile.replaceAll("in", "results");
 
 
         ObjectMapper objectMapper = new ObjectMapper();
@@ -55,7 +54,7 @@ public class Main {
         if (helper.getCurrentUser() != null
                 && helper.getCurrentUser().getCredentials().getAccountType().equals("premium")) {
             Recommendation recommendation = new Recommendation();
-            recommendation.giveRecommendation(helper , input.getMovies());
+            recommendation.giveRecommendation(helper);
         }
 
         ObjectWriter objectWriter = objectMapper.writerWithDefaultPrettyPrinter();

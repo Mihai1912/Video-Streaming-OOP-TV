@@ -3,13 +3,10 @@ package pages;
 import designpattern.visitorpattern.Visitor;
 import fileinput.Action;
 import fileinput.Input;
-import fileinput.Movie;
 import fileinput.User;
 import helper.Helper;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.ArrayList;
 
 @Getter
 @Setter

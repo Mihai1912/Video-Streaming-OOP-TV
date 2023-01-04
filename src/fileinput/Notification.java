@@ -9,7 +9,7 @@ public class Notification {
     private String message;
     private String movieName;
 
-    public Notification(Notification notification) {
+    public Notification(final Notification notification) {
         message = notification.message;
         movieName = notification.movieName;
     }

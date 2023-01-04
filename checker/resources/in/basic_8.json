@@ -481,7 +481,7 @@
       "rate": 2
     },
     {
-     "type" : "back"
+      "type" : "back"
     },
     {
       "type": "change page",
@@ -502,7 +502,7 @@
       "rate": 2
     },
     {
-     "type" : "back"
+      "type" : "back"
     },
     {
       "type": "change page",
@@ -523,7 +523,7 @@
       "rate": 2
     },
     {
-     "type" : "back"
+      "type" : "back"
     },
     {
       "type": "change page",
@@ -544,7 +544,7 @@
       "rate": 2
     },
     {
-     "type" : "back"
+      "type" : "back"
     },
     {
       "type": "change page",
@@ -565,7 +565,7 @@
       "rate": 2
     },
     {
-     "type" : "back"
+      "type" : "back"
     },
     {
       "type": "change page",
@@ -586,7 +586,7 @@
       "rate": 2
     },
     {
-     "type" : "back"
+      "type" : "back"
     },
     {
       "type": "change page",
@@ -607,7 +607,257 @@
       "rate": 10
     },
     {
-     "type" : "back"
+      "type" : "back"
+    },
+    {
+      "type": "on page",
+      "feature": "buy tokens",
+      "count": "1000"
+    },
+    {
+      "type": "back"
+    },
+    {
+      "type": "back"
+    },
+    {"type": "change page",
+      "page":"movies"
+    },
+    {
+      "type": "change page",
+      "page": "see details",
+      "movie": "Comet in Moominland"
+    },
+    {
+      "type": "on page",
+      "feature": "purchase"
+    },
+    {
+      "type": "on page",
+      "feature": "watch"
+    },
+    {
+      "type": "on page",
+      "feature": "rate",
+      "rate": 6
+    },
+    {
+      "type" : "back"
+    },
+    {
+      "type": "change page",
+      "page": "see details",
+      "movie": "Bag It"
+    },
+    {
+      "type": "on page",
+      "feature": "purchase"
+    },
+    {
+      "type": "on page",
+      "feature": "watch"
+    },
+    {
+      "type": "on page",
+      "feature": "rate",
+      "rate": 3
+    },
+    {
+      "type" : "back"
+    },
+    {
+      "type": "change page",
+      "page": "see details",
+      "movie": "Shaolin Temple (Shao Lin si)"
+    },
+    {
+      "type": "on page",
+      "feature": "purchase"
+    },
+    {
+      "type": "on page",
+      "feature": "watch"
+    },
+    {
+      "type": "on page",
+      "feature": "rate",
+      "rate": 5
+    },
+    {
+      "type" : "back"
+    },
+    {
+      "type": "change page",
+      "page": "see details",
+      "movie": "Belphecor: Curse of the Mummy (Belphégor - Le fantôme du Louvre)"
+    },
+    {
+      "type": "on page",
+      "feature": "purchase"
+    },
+    {
+      "type": "on page",
+      "feature": "watch"
+    },
+    {
+      "type": "on page",
+      "feature": "rate",
+      "rate": 3
+    },
+    {
+      "type" : "back"
+    },
+    {
+      "type": "change page",
+      "page": "see details",
+      "movie": "Endangered Species"
+    },
+    {
+      "type": "on page",
+      "feature": "purchase"
+    },
+    {
+      "type": "on page",
+      "feature": "watch"
+    },
+    {
+      "type": "on page",
+      "feature": "rate",
+      "rate": 2
+    },
+    {
+      "type" : "back"
+    },
+    {
+      "type": "change page",
+      "page": "see details",
+      "movie": "Celluloid Closet, The"
+    },
+    {
+      "type": "on page",
+      "feature": "purchase"
+    },
+    {
+      "type": "on page",
+      "feature": "watch"
+    },
+    {
+      "type": "on page",
+      "feature": "rate",
+      "rate": 1
+    },
+    {
+      "type" : "back"
+    },
+    {
+      "type": "change page",
+      "page": "see details",
+      "movie": "As You Like It"
+    },
+    {
+      "type": "on page",
+      "feature": "purchase"
+    },
+    {
+      "type": "on page",
+      "feature": "watch"
+    },
+    {
+      "type": "on page",
+      "feature": "rate",
+      "rate": 2
+    },
+    {
+      "type" : "back"
+    },
+    {
+      "type": "change page",
+      "page": "see details",
+      "movie": "The Well-Digger's Daughter"
+    },
+    {
+      "type": "on page",
+      "feature": "purchase"
+    },
+    {
+      "type": "on page",
+      "feature": "watch"
+    },
+    {
+      "type": "on page",
+      "feature": "rate",
+      "rate": 5
+    },
+    {
+      "type" : "back"
+    },
+    {
+      "type": "change page",
+      "page": "see details",
+      "movie": "Mistress"
+    },
+    {
+      "type": "on page",
+      "feature": "purchase"
+    },
+    {
+      "type": "on page",
+      "feature": "watch"
+    },
+    {
+      "type": "on page",
+      "feature": "rate",
+      "rate": 4
+    },
+    {
+      "type" : "back"
+    },
+    {
+      "type": "change page",
+      "page": "see details",
+      "movie": "Lord, Save Us from Your Followers"
+    },
+    {
+      "type": "on page",
+      "feature": "purchase"
+    },
+    {
+      "type": "on page",
+      "feature": "watch"
+    },
+    {
+      "type": "on page",
+      "feature": "rate",
+      "rate": 2
+    },
+    {
+      "type" : "back"
+    },
+    {
+      "type": "change page",
+      "page": "see details",
+      "movie": "Indiana Jones and the Temple of Doom"
+    },
+    {
+      "type": "on page",
+      "feature": "purchase"
+    },
+    {
+      "type": "on page",
+      "feature": "watch"
+    },
+    {
+      "type" : "back"
+    },
+    {
+      "type": "on page",
+      "page": "movies",
+      "feature": "filter",
+      "filters": {
+        "sort": {
+          "rating": "increasing"
+        }
+      }
     }
   ]
 }

@@ -8,11 +8,17 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Map;
 
-public class Recommendation {
-    public void giveRecommendation (Helper helper , ArrayList<Movie> movies) {
+public final class Recommendation {
+    /**
+     *
+     * @param helper the class in which the current user is stored, the list of current movies and
+     *               several auxiliary
+     *               fields
+     */
+    public void giveRecommendation(final Helper helper) {
         ArrayList<String> aux = new ArrayList<>();
         helper.getCurrentUser().getLikeGenres().entrySet().stream()
-                .sorted(Map.Entry.comparingByValue()).forEach(o->aux.add(o.getKey()));
+                .sorted(Map.Entry.comparingByValue()).forEach(o -> aux.add(o.getKey()));
         Collections.reverse(aux);
 
         ArrayList<Movie> unwatchedMovies = helper.getCurrentUser().deepCopyForArray(helper
@@ -22,10 +28,10 @@ public class Recommendation {
             unwatchedMovies.removeIf(movie1 -> movie1.getName().equals(movie.getName()));
         }
 
-        unwatchedMovies.sort((o1, o2) -> o2.getNumLikes()-o1.getNumLikes());
+        unwatchedMovies.sort((o1, o2) -> o2.getNumLikes() - o1.getNumLikes());
 
-        for (String a: aux) {
-            for (Movie movie: unwatchedMovies) {
+        for (String a : aux) {
+            for (Movie movie : unwatchedMovies) {
                 if (movie.getGenres().contains(a)) {
                     Notification notification = new Notification();
                     notification.setMessage("Recommendation");

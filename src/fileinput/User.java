@@ -90,6 +90,10 @@ public final class User {
         return retArray;
     }
 
+    /**
+     * @param arrayList desired arraylist
+     * @return copy arraylist
+     */
     public ArrayList<Notification> deepCopyForArray1(final ArrayList<Notification> arrayList) {
         ArrayList<Notification> retArray = new ArrayList<>();
         for (Notification notification : arrayList) {
@@ -121,17 +125,16 @@ public final class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "credentials=" + credentials +
-                ", tokensCount=" + tokensCount +
-                ", numFreePremiumMovies=" + numFreePremiumMovies +
-                ", purchasedMovies=" + purchasedMovies +
-                ", watchedMovies=" + watchedMovies +
-                ", likedMovies=" + likedMovies +
-                ", ratedMovies=" + ratedMovies +
-                ", moviesToWatch=" + moviesToWatch +
-                ", notifications=" + notifications +
-                ", subscriptions=" + subscriptions +
-                '}';
+        return "User{"
+                + "credentials=" + credentials
+                + ", tokensCount=" + tokensCount
+                + ", numFreePremiumMovies=" + numFreePremiumMovies
+                + ", purchasedMovies=" + purchasedMovies
+                + ", watchedMovies=" + watchedMovies
+                + ", likedMovies=" + likedMovies
+                + ", ratedMovies=" + ratedMovies
+                + ", moviesToWatch=" + moviesToWatch
+                + ", notifications=" + notifications
+                + ", subscriptions=" + subscriptions + '}';
     }
 }

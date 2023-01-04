@@ -1,13 +1,17 @@
 package pages.type;
 
-import fileinput.*;
+import fileinput.Input;
+import fileinput.Action;
+import fileinput.Movie;
+import fileinput.User;
+import fileinput.Notification;
 import helper.Helper;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class Database {
+public final class Database {
     private static Database instance = null;
 
     private Database() {
@@ -23,7 +27,14 @@ public class Database {
         return instance;
     }
 
-    public void database(Input input, Action action, Helper helper) {
+    /**
+     * @param input  dataBase from Json File
+     * @param action the action to be performed at this moment
+     * @param helper the class in which the current user is stored, the list of current movies and
+     *               several auxiliary
+     *               fields
+     */
+    public void database(final Input input, final Action action, final Helper helper) {
         if (action.getFeature().equals("add")) {
 
             for (Movie movie : input.getMovies()) {
@@ -36,7 +47,8 @@ public class Database {
             input.getMovies().add(action.getAddedMovie());
 
             for (User user : helper.getUsers()) {
-                if (!action.getAddedMovie().getCountriesBanned().contains(user.getCredentials().getCountry())) {
+                if (!action.getAddedMovie().getCountriesBanned()
+                        .contains(user.getCredentials().getCountry())) {
                     user.getMoviesToWatch().add(action.getAddedMovie());
                     for (String genre : action.getAddedMovie().getGenres()) {
                         if (user.getSubscriptions().contains(genre)) {
@@ -55,7 +67,7 @@ public class Database {
             boolean deletedMovieFound = false;
 
             for (Movie movie : input.getMovies()) {
-                if (action.getDeletedMovie().equals(movie.getName())){
+                if (action.getDeletedMovie().equals(movie.getName())) {
                     input.getMovies().remove(movie);
                     deletedMovieFound = true;
                     break;
@@ -121,11 +133,11 @@ public class Database {
                 }
 
                 if (user.getCredentials().getAccountType().equals("premium")) {
-                    user.setNumFreePremiumMovies(user.getNumFreePremiumMovies()+1);
+                    user.setNumFreePremiumMovies(user.getNumFreePremiumMovies() + 1);
                 }
 
                 if (user.getCredentials().getAccountType().equals("standard")) {
-                    user.setTokensCount(user.getTokensCount()+2);
+                    user.setTokensCount(user.getTokensCount() + 2);
                 }
             }
         }

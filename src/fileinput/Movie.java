@@ -10,7 +10,7 @@ import java.util.HashMap;
 @Setter
 @Getter
 @JsonIgnoreProperties(value = {"ratings"})
-public class Movie {
+public final class Movie {
     private String name;
     private String year;
     private int duration;
@@ -21,8 +21,8 @@ public class Movie {
     private Integer numLikes = 0;
     private Integer numRatings = 0;
     private Double rating = 0.0;
-//    private ArrayList<Integer> ratings = new ArrayList<>();
-    private HashMap<String , Double> ratings = new HashMap<>();
+    //    private ArrayList<Integer> ratings = new ArrayList<>();
+    private HashMap<String, Double> ratings = new HashMap<>();
 
     public Movie(final Movie movie) {
         name = movie.getName();

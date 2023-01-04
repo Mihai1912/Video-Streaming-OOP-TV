@@ -20,7 +20,7 @@ public final class Helper {
     private ArrayNode output;
     private ArrayList<Movie> filteredMovies = new ArrayList<>();
     private Integer seeDetailsAfterFilter = 0;
-    private Stack<String> PageStack = new Stack<String>();
+    private Stack<String> pageStack = new Stack<String>();
     private Boolean printOut = true;
 
     /**
