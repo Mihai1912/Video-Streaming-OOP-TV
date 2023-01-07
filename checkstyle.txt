@@ -2,7 +2,7 @@ Starting audit...
 [ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\fileinput\User.java:70:33: '15' is a magic number. [MagicNumber]
 [ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\helper\Helper.java:44:5: Missing a Javadoc comment. [MissingJavadocMethod]
 [ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\Main.java:16:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
-[ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\Main.java:43:42: '15' is a magic number. [MagicNumber]
+[ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\Main.java:42:42: '15' is a magic number. [MagicNumber]
 [ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\pages\SeeDetailsPage.java:215:36: '5' is a magic number. [MagicNumber]
 [ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\pages\UpgradesPage.java:27:32: '10' is a magic number. [MagicNumber]
 [ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\pages\UpgradesPage.java:29:70: '10' is a magic number. [MagicNumber]

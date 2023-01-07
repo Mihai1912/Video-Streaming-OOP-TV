@@ -21,7 +21,6 @@ public class Main {
     public static void main(final String[] args) throws IOException {
         String pathToInputFile = args[0];
         String resutlFile = args[1];
-        String viewOutputPath = pathToInputFile.replaceAll("in", "results");
 
 
         ObjectMapper objectMapper = new ObjectMapper();
@@ -59,6 +58,5 @@ public class Main {
 
         ObjectWriter objectWriter = objectMapper.writerWithDefaultPrettyPrinter();
         objectWriter.writeValue(new File(resutlFile), output);
-        objectWriter.writeValue(new File(viewOutputPath), output);
     }
 }
