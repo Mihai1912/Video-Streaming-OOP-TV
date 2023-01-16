@@ -54,3 +54,9 @@ gen de catre utilizator. Daca acest film nu a fost gasit nu i se recomanda niciu
 functionalitati este ca se ia fiecare gen al filmului pentru care s-a apelat seedetails si se verifica
 daca acesta este genul de film pentru care s-a dat subscribe daca da nu se primteaza nimic, iar daca 
 genul de film pentru care s-a dat subscribe nu s-a gasit se printeaza eroarea standard.
+
+###  ---  Design Patter Nou ---
+* Un nou design patter pe care l-am adaugat este Chain-of-responsibility Pattern pe care l-am utilizat
+in clasa ActionHandler in care pasam parametrii necesari pentru rulare actiunii unei
+variabile de tip changePageType, iar aceasta avanseaza prin chain pana cand intalneste
+type ul dorit si executa actiunea.

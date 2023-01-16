@@ -1,4 +1,10 @@
 Starting audit...
+[ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\actionhandler\ActionHandler.java:3:50: Using the '.*' form of import should be avoided - designpattern.chainOfResponsibilityPattern.*. [AvoidStarImport]
+[ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\actionhandler\ActionHandler.java:4:8: Unused import - pages.type.ChangePage. [UnusedImports]
+[ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\actionhandler\ActionHandler.java:5:8: Unused import - pages.type.Back. [UnusedImports]
+[ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\actionhandler\ActionHandler.java:6:8: Unused import - pages.type.Database. [UnusedImports]
+[ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\actionhandler\ActionHandler.java:7:8: Unused import - pages.type.OnPage. [UnusedImports]
+[ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\designpattern\chainOfResponsibilityPattern\Type.java:14:5: Missing a Javadoc comment. [MissingJavadocMethod]
 [ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\fileinput\User.java:70:33: '15' is a magic number. [MagicNumber]
 [ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\helper\Helper.java:44:5: Missing a Javadoc comment. [MissingJavadocMethod]
 [ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\Main.java:16:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
@@ -12,4 +18,4 @@ Starting audit...
 [ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\Test.java:206:65: Parameter testFileName should be final. [FinalParameters]
 [ERROR] C:\Users\Mihai\Desktop\POO_proiect_etapa_2\.\src\Test.java:222: Line is longer than 100 characters (found 108). [LineLength]
 Audit done.
-Checkstyle ends with 12 errors.
+Checkstyle ends with 18 errors.

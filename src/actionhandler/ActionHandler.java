@@ -1,5 +1,6 @@
 package actionhandler;
 
+import designpattern.chainOfResponsibilityPattern.*;
 import pages.type.ChangePage;
 import pages.type.Back;
 import pages.type.Database;
@@ -16,15 +17,9 @@ public final class ActionHandler {
      *               several auxiliary fields
      */
     public void getType(final Input input, final Action action, final Helper helper) {
-        if ("change page".equals(action.getType())) {
-            ChangePage.getInstance().changePage(input, action, helper);
-        } else if ("on page".equals(action.getType())) {
-            OnPage.getInstance().onPage(input, action, helper);
-        } else if ("database".equals(action.getType())) {
-            Database.getInstance().database(input, action, helper);
-        } else if ("back".equals(action.getType())) {
-            Back.getInstance().back(input, action, helper);
-        }
+        ChangePageType changePageType =
+                new ChangePageType(new OnPageType(new DatabaseType(new BackType(null))));
+        changePageType.doAction(input, action, helper);
     }
 
     /**
